@@ -212,41 +212,63 @@ address { font-style: normal; }
 .nav-drawer a:last-child:hover { background:var(--verde-d); }
 
 /* ----------------------------------------------------------------
-   HERO — Image full-bleed with text overlay
+   HERO — Split layout (texte gauche · images droite)
 ---------------------------------------------------------------- */
 .hero {
   margin-top: var(--nav-h);
-  position: relative; overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   min-height: calc(100vh - var(--nav-h));
-  display: flex; align-items: center;
+  overflow: hidden;
 }
-.hero-bg {
-  position:absolute; inset:0; z-index:0;
-  background-image: url('https://le-de.cdn-website.com/c7655ccd21fa48e39d5a322607a67e62/dms3rep/multi/opt/Cordonnerie-Multi-Services-Sarl-5-1920w.jpg');
-  background-size:cover; background-position:center;
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
 }
-.hero-bg::after {
-  content:''; position:absolute; inset:0;
-  background: linear-gradient(105deg, rgba(15,23,42,.88) 0%, rgba(15,23,42,.65) 55%, rgba(15,23,42,.35) 100%);
+
+.hero-left {
+  background: var(--slate);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 4rem 3rem 4rem 4rem;
 }
-.hero-body { position:relative; z-index:1; padding:5rem 0 4rem; max-width:680px; }
+@media (min-width: 1024px) { .hero-left { padding: 5rem 4rem 5rem 5rem; } }
+@media (max-width: 860px)  { .hero-left { padding: 3.5rem 1.5rem; } }
+
+.hero-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+  background: var(--border);
+  overflow: hidden;
+}
+@media (max-width: 860px) {
+  .hero-right { grid-template-rows: 160px 160px; }
+}
+.hero-right img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .65s var(--ease);
+}
+.hero-right img:hover { transform: scale(1.05); }
+
 .hero-badge {
   display: inline-flex; align-items:center; gap:.5rem;
-  background: rgba(0,146,70,.2); border:1px solid rgba(0,146,70,.5);
+  background: rgba(0,146,70,.18); border:1px solid rgba(0,146,70,.45);
   color: #6ee7b7; font-size:.72rem; font-weight:700;
   letter-spacing:.15em; text-transform:uppercase;
   padding:.35rem .85rem; border-radius:20px; margin-bottom:1.5rem;
+  width: fit-content;
 }
-.hero-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--verde); }
+.hero-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--verde); flex-shrink:0; }
 .hero-h1 {
-  font-family: var(--font-h); font-size:clamp(2.75rem, 6.5vw, 5rem);
+  font-family: var(--font-h); font-size:clamp(2.25rem, 4.5vw, 4rem);
   font-weight:400; color:#fff; line-height:1.1; margin-bottom:1.25rem;
 }
-.hero-h1 em { font-style:italic; color:rgba(255,255,255,.65); }
-.hero-p { font-size:1.125rem; font-weight:300; line-height:1.75; color:rgba(255,255,255,.75); max-width:52ch; margin-bottom:2.5rem; }
+.hero-h1 em { font-style:italic; color:rgba(255,255,255,.6); }
+.hero-p {
+  font-size:1.0625rem; font-weight:300; line-height:1.75;
+  color:rgba(255,255,255,.72); max-width:48ch; margin-bottom:2.5rem;
+}
 .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; }
-.hero-scroll { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); z-index:1; color:rgba(255,255,255,.3); animation:bob 2s infinite; }
-@keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(7px);} }
 
 /* ----------------------------------------------------------------
    TRUST STRIP
