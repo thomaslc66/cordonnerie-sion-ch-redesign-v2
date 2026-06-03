@@ -16,6 +16,19 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
+  <!-- ============================================================
+       COOKIEBOT — Consent Management Platform
+       Remplacer YOUR-CBID-HERE par votre CBID Cookiebot.
+       Créez un compte sur https://manage.cookiebot.com,
+       ajoutez le domaine cordonnerie-sion.ch et copiez le CBID.
+       Une fois actif : supprimer le bloc <!-- COOKIE BANNER RGPD -->
+       ci-dessous et le JS correspondant dans scripts.js.
+  ============================================================ -->
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js"
+          data-cbid="YOUR-CBID-HERE"
+          data-blockingmode="auto"
+          type="text/javascript"></script>
+
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"LocalBusiness","name":"Cordonnerie Multi-Services Sàrl","url":"https://www.cordonnerie-sion.ch","telephone":"+41273220092","email":"infocordonnerie@netplus.ch","foundingDate":"2004","address":{"@type":"PostalAddress","streetAddress":"Place du Midi 52","addressLocality":"Sion","postalCode":"1950","addressCountry":"CH"},"geo":{"@type":"GeoCoordinates","latitude":46.2318,"longitude":7.3597},"openingHours":["Mo 08:30-12:00","Tu-Fr 08:30-12:00,13:30-18:30","Sa 08:30-12:00,13:30-17:00"]}
   </script>
@@ -31,9 +44,11 @@
              alt="Cordonnerie Multi-Services Sàrl" width="190" height="48">
       </a>
       <ul class="nav-links" role="list">
+        <li><a href="#" class="nav-link">Accueil</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#avis"     class="nav-link">Avis</a></li>
         <li><a href="#contact"  class="nav-link">Contact</a></li>
+        <li><a href="privacy.html" class="nav-link">Confidentialité</a></li>
       </ul>
       <a href="tel:+41273220092" class="nav-tel" aria-label="Appeler le 027 322 00 92">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -45,10 +60,13 @@
     </div>
   </nav>
   <div class="nav-drawer" id="drawer" aria-hidden="true">
+    <a href="#">Accueil</a>
     <a href="#services">Nos services</a>
     <a href="#avis">Avis clients</a>
     <a href="#contact">Contact &amp; Horaires</a>
-    <a href="tel:+41273220092">📞 027 322 00 92</a>
+    <a href="privacy.html">Politique de confidentialité</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="tel:+41273220092">027 322 00 92</a>
   </div>
 
   <main id="main">
@@ -305,6 +323,22 @@
                   <input type="tel" id="tel" name="telephone" class="fctrl" autocomplete="tel" required aria-required="true">
                 </div>
                 <div class="fg">
+                  <label for="service" class="flbl">Service concerné</label>
+                  <select id="service" name="service" class="fctrl fctrl-select">
+                    <option value="">— Sélectionnez un service (optionnel) —</option>
+                    <option value="Cordonnerie">Cordonnerie — réparation chaussures</option>
+                    <option value="Clés & Accès">Clés &amp; Accès — duplication</option>
+                    <option value="Maroquinerie italienne">Maroquinerie italienne</option>
+                    <option value="Gravures">Gravures — sur mesure</option>
+                    <option value="Coutellerie">Coutellerie &amp; Victorinox</option>
+                    <option value="Aiguisage">Aiguisage professionnel</option>
+                    <option value="Entretien du cuir">Entretien du cuir</option>
+                    <option value="Montres">Montres &amp; petits services</option>
+                    <option value="Conseil">Conseil &amp; renseignements</option>
+                    <option value="Autre">Autre demande</option>
+                  </select>
+                </div>
+                <div class="fg">
                   <label for="msg" class="flbl">Message <span style="color:#CE2B37" aria-hidden="true">*</span></label>
                   <textarea id="msg" name="message" class="fctrl" rows="5" required aria-required="true" placeholder="Décrivez votre demande…"></textarea>
                 </div>
@@ -354,11 +388,6 @@
             <a href="tel:+41273220092">027 322 00 92</a><br>
             <a href="mailto:infocordonnerie@netplus.ch">infocordonnerie@netplus.ch</a>
           </address>
-          <div class="footer-soc">
-            <a href="https://www.facebook.com/cakolli7118/" class="footer-si" rel="noopener noreferrer" target="_blank" aria-label="Facebook">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-            </a>
-          </div>
         </div>
         <div>
           <p class="footer-col-title">Horaires</p>
@@ -382,8 +411,8 @@
       <div class="footer-bottom">
         <span class="footer-copy">© 2026 Cordonnerie Multi-Services Sàrl — Sion</span>
         <nav class="footer-legal" aria-label="Liens légaux">
-          <a href="https://www.cordonnerie-sion.ch/privacy" rel="noopener noreferrer" target="_blank">Politique de confidentialité</a>
-          <a href="https://www.cordonnerie-sion.ch/mentions-legales" rel="noopener noreferrer" target="_blank">Mentions légales</a>
+          <a href="privacy.html">Politique de confidentialité</a>
+          <a href="mentions-legales.html">Mentions légales</a>
           <span style="color:rgba(255,255,255,.1)">Site démo</span>
         </nav>
       </div>
@@ -394,11 +423,33 @@
   <div class="cookie" id="cookie" role="dialog" aria-label="Gestion des cookies">
     <p class="cookie-txt">
       <strong>Ce site utilise des cookies.</strong>
-      En naviguant, vous acceptez notre <a href="https://www.cordonnerie-sion.ch/privacy" rel="noopener noreferrer" target="_blank">politique de confidentialité</a>.
+      En naviguant, vous acceptez notre <a href="privacy.html">politique de confidentialité</a>.
     </p>
     <div class="cookie-btns">
       <button class="ckbtn ck-no"  id="ck-no">Refuser</button>
       <button class="ckbtn ck-yes" id="ck-yes">Accepter</button>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="back-top" aria-label="Remonter en haut de page" title="Retour en haut">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 15l-6-6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <!-- SERVICE MODAL -->
+  <div class="svc-modal" id="svc-modal" role="dialog" aria-modal="true" aria-labelledby="svc-modal-title" aria-hidden="true">
+    <div class="svc-modal-overlay" id="svc-modal-overlay"></div>
+    <div class="svc-modal-panel">
+      <button class="svc-modal-close" id="svc-modal-close" aria-label="Fermer le détail du service">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="svc-modal-imgs" id="svc-modal-imgs"></div>
+      <div class="svc-modal-body">
+        <p class="svc-modal-badge" id="svc-modal-badge"></p>
+        <h2 class="svc-modal-title" id="svc-modal-title"></h2>
+        <div class="svc-modal-desc" id="svc-modal-desc"></div>
+        <ul class="svc-modal-features" id="svc-modal-features"></ul>
+      </div>
     </div>
   </div>
 
