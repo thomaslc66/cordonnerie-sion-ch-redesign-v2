@@ -1,344 +1,359 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de confidentialité — Cordonnerie Multi-Services Sàrl</title>
-  <meta name="description" content="Politique de confidentialité et protection des données personnelles de la Cordonnerie Multi-Services Sàrl, Place du Midi 52, 1950 Sion.">
-  <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://www.cordonnerie-sion.ch/privacy">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Politique de confidentialité, Cordonnerie Multi-Services Sàrl</title>
+    <meta name="description" content="Politique de confidentialité et protection des données personnelles de la Cordonnerie Multi-Services Sàrl, Place du Midi 52, 1950 Sion." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://www.cordonnerie-sion.ch/privacy" />
+    <link rel="icon" href="images/logo.jpg" />
+    <style>
+      @font-face {
+        font-family: "Bricolage Grotesque";
+        font-weight: 400 800;
+        font-display: swap;
+        src: url("https://cdn.jsdelivr.net/fontsource/fonts/bricolage-grotesque:vf@latest/latin-wght-normal.woff2") format("woff2-variations");
+      }
+      @font-face {
+        font-family: "Hanken Grotesk";
+        font-weight: 300 700;
+        font-display: swap;
+        src: url("https://cdn.jsdelivr.net/fontsource/fonts/hanken-grotesk:vf@latest/latin-wght-normal.woff2") format("woff2-variations");
+      }
+      :root {
+        --red: #c41e2a; --ink: #181614; --ink-soft: #514c46;
+        --paper: #f6f3ee; --paper-2: #efe9e1; --surface: #ffffff;
+        --line: rgba(24,22,20,.12); --line-strong: rgba(24,22,20,.22);
+        --panel: #1b1714; --panel-fg: #f6f3ee; --panel-muted: rgba(246,243,238,.72); --panel-line: rgba(255,255,255,.14);
+        --r: 14px; --r-lg: 22px; --pill: 999px; --maxw: 1240px;
+        --font-display: "Bricolage Grotesque", system-ui, "Segoe UI", sans-serif;
+        --font-body: "Hanken Grotesk", system-ui, "Segoe UI", sans-serif;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --red: #e23541; --ink: #f3efe9; --ink-soft: #b4ada4;
+          --paper: #151311; --paper-2: #1d1a17; --surface: #211d19;
+          --line: rgba(243,239,233,.14); --line-strong: rgba(243,239,233,.26);
+          --panel: #26211b; --panel-fg: #f3efe9; --panel-muted: rgba(243,239,233,.7); --panel-line: rgba(243,239,233,.12);
+        }
+      }
+      * , *::before, *::after { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0; background: var(--paper); color: var(--ink);
+        font-family: var(--font-body); font-size: 17px; line-height: 1.65; font-weight: 380;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; line-height: 1.1; margin: 0; }
+      a { color: var(--red); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      img { display: block; max-width: 100%; height: auto; }
+      :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 4px; }
+      .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px,5vw,56px); }
+      .skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--paper); padding: 12px 18px; z-index: 200; }
+      .skip:focus { left: 0; }
 
-  <!-- ============================================================
-       COOKIEBOT — Remplacer YOUR-CBID-HERE par votre ID Cookiebot.
-       Créez un compte sur https://manage.cookiebot.com et ajoutez
-       votre domaine pour obtenir votre CBID.
-       Lorsque Cookiebot est actif, supprimer la bannière custom
-       (#cookie) dans index.html et son JS dans scripts.js.
-  ============================================================ -->
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js"
-          data-cbid="YOUR-CBID-HERE"
-          data-blockingmode="auto"
-          type="text/javascript"></script>
+      /* NAV */
+      .nav { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--paper) 86%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+      .nav-inner { height: 72px; display: flex; align-items: center; gap: 24px; }
+      .nav-logo { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 700; color: var(--ink); }
+      .nav-logo img { height: 42px; width: auto; border-radius: 8px; }
+      .nav-logo span { max-width: 16ch; line-height: 1.05; }
+      .nav-links { display: flex; gap: 28px; margin-left: auto; list-style: none; padding: 0; margin-top: 0; margin-bottom: 0; }
+      .nav-links a { color: var(--ink-soft); font-weight: 500; font-size: 0.96rem; }
+      .nav-links a:hover { color: var(--ink); text-decoration: none; }
+      .nav-tel { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.95rem; padding: 10px 18px; border-radius: var(--pill); border: 1.5px solid var(--line-strong); color: var(--ink); }
+      .nav-tel:hover { border-color: var(--red); color: var(--red); text-decoration: none; }
+      .nav-tel svg { width: 16px; height: 16px; color: var(--red); }
+      @media (max-width: 820px) { .nav-links, .nav-tel { display: none; } .nav-logo span { display: none; } }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <a href="#main" class="skip">Aller au contenu</a>
+      /* PAGE HERO */
+      .page-hero { padding: clamp(40px,6vw,72px) 0 clamp(28px,4vw,40px); border-bottom: 1px solid var(--line); }
+      .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 18px; }
+      .breadcrumb a { color: var(--ink-soft); }
+      .breadcrumb a:hover { color: var(--red); }
+      .breadcrumb svg { width: 14px; height: 14px; opacity: 0.6; }
+      .page-title { font-size: clamp(2.2rem,5vw,3.4rem); font-weight: 700; }
+      .page-meta { color: var(--ink-soft); font-size: 0.92rem; margin-top: 12px; }
 
-  <!-- NAV -->
-  <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Cordonnerie Multi-Services — accueil">
-        <img src="https://le-de.cdn-website.com/c7655ccd21fa48e39d5a322607a67e62/dms3rep/multi/opt/Cordonnerie-Multi-Services-Sarl-Logo-1920w.jpg"
-             alt="Cordonnerie Multi-Services Sàrl" width="190" height="48">
-      </a>
-      <ul class="nav-links" role="list">
-        <li><a href="index.html"          class="nav-link">Accueil</a></li>
-        <li><a href="index.html#services" class="nav-link">Services</a></li>
-        <li><a href="index.html#avis"     class="nav-link">Avis</a></li>
-        <li><a href="index.html#contact"  class="nav-link">Contact</a></li>
-      </ul>
-      <a href="tel:+41273220092" class="nav-tel" aria-label="Appeler le 027 322 00 92">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        027 322 00 92
-      </a>
-      <button class="nav-burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="drawer">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-  <div class="nav-drawer" id="drawer" aria-hidden="true">
-    <a href="index.html">Accueil</a>
-    <a href="index.html#services">Nos services</a>
-    <a href="index.html#avis">Avis clients</a>
-    <a href="index.html#contact">Contact &amp; Horaires</a>
-    <a href="tel:+41273220092">027 322 00 92</a>
-  </div>
+      /* LEGAL LAYOUT */
+      .legal-section { padding: clamp(40px,6vw,72px) 0 clamp(56px,7vw,96px); }
+      .legal-wrap { display: grid; grid-template-columns: 250px 1fr; gap: clamp(32px,5vw,64px); align-items: start; }
+      .legal-toc { position: sticky; top: 96px; border-left: 2px solid var(--line); padding-left: 18px; }
+      .legal-toc-title { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; margin: 0 0 12px; color: var(--ink); }
+      .legal-toc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; counter-reset: none; }
+      .legal-toc-list a { color: var(--ink-soft); font-size: 0.88rem; line-height: 1.35; }
+      .legal-toc-list a:hover { color: var(--red); text-decoration: none; }
+      .legal-content { max-width: 72ch; }
+      .legal-article { padding-bottom: 32px; margin-bottom: 32px; border-bottom: 1px solid var(--line); }
+      .legal-article h2 { font-size: 1.5rem; margin-bottom: 14px; }
+      .legal-article h3 { font-size: 1.1rem; margin: 22px 0 8px; }
+      .legal-article p { margin: 0 0 14px; color: var(--ink-soft); }
+      .legal-article p strong, .legal-article li strong { color: var(--ink); }
+      .legal-article ul { margin: 0 0 14px; padding-left: 20px; color: var(--ink-soft); }
+      .legal-article li { margin-bottom: 9px; }
+      .legal-article abbr { text-decoration: underline dotted; cursor: help; }
+      .legal-address { font-style: normal; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; color: var(--ink); line-height: 1.7; }
+      .legal-version { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 20px 22px; }
+      .legal-version p { color: var(--ink-soft); margin: 0 0 8px; }
+      .legal-version p:last-child { margin: 0; }
+      @media (max-width: 820px) {
+        .legal-wrap { grid-template-columns: 1fr; }
+        .legal-toc { position: static; border-left: 0; border-top: 2px solid var(--line); padding-left: 0; padding-top: 18px; }
+      }
 
-  <main id="main">
+      /* FOOTER */
+      footer { background: var(--paper-2); border-top: 1px solid var(--line); padding: clamp(40px,5vw,64px) 0 26px; }
+      .foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 32px; }
+      .foot-brand img { height: 46px; border-radius: 8px; margin-bottom: 12px; }
+      .foot-brand p { color: var(--ink-soft); font-size: 0.92rem; max-width: 34ch; margin: 0 0 12px; }
+      .foot-col h4 { font-family: var(--font-display); font-size: 1rem; margin: 0 0 12px; }
+      .foot-col a, .foot-col span { display: block; color: var(--ink-soft); font-size: 0.92rem; padding: 5px 0; }
+      .foot-col a:hover { color: var(--red); text-decoration: none; }
+      .foot-bottom { margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; font-size: 0.85rem; color: var(--ink-soft); }
+      .foot-bottom a { color: var(--ink-soft); }
+      .foot-bottom a:hover { color: var(--red); }
+      @media (max-width: 720px) { .foot-grid { grid-template-columns: 1fr 1fr; } .foot-brand { grid-column: span 2; } }
+      @media (max-width: 480px) { .foot-grid { grid-template-columns: 1fr; } .foot-brand { grid-column: span 1; } }
+    </style>
+  </head>
+  <body>
+    <a href="#main" class="skip">Aller au contenu</a>
 
-    <!-- PAGE HERO -->
-    <section class="page-hero" aria-labelledby="page-title">
-      <div class="wrap">
-        <nav class="breadcrumb" aria-label="Fil d'Ariane">
-          <a href="index.html">Accueil</a>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6" stroke-linecap="round"/></svg>
-          <span aria-current="page">Politique de confidentialité</span>
-        </nav>
-        <h1 class="page-title" id="page-title">Politique de confidentialité</h1>
-        <p class="page-meta">Version 1.0.0 &nbsp;·&nbsp; Dernière mise à jour : juin 2026</p>
+    <nav class="nav" aria-label="Navigation principale">
+      <div class="wrap nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Cordonnerie Multi-Services, accueil">
+          <img src="images/logo.jpg" alt="Cordonnerie Multi-Services Sàrl" width="120" height="42" />
+          <span>Cordonnerie Multi-Services</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#services">Nos services</a></li>
+          <li><a href="index.html#boutique">Boutique</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <a href="tel:+41273220092" class="nav-tel" aria-label="Appeler le 027 322 00 92">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          027 322 00 92
+        </a>
       </div>
-    </section>
+    </nav>
 
-    <!-- LEGAL CONTENT -->
-    <section class="legal-section">
-      <div class="wrap legal-wrap">
-
-        <!-- SOMMAIRE (sidebar) -->
-        <aside>
-          <nav class="legal-toc" aria-label="Sommaire">
-            <p class="legal-toc-title">Sommaire</p>
-            <ol class="legal-toc-list">
-              <li><a href="#intro">1. Introduction</a></li>
-              <li><a href="#responsable">2. Responsable du traitement</a></li>
-              <li><a href="#donnees">3. Catégories de données</a></li>
-              <li><a href="#finalites">4. Finalités du traitement</a></li>
-              <li><a href="#bases">5. Base juridique</a></li>
-              <li><a href="#partage">6. Publication et transmission</a></li>
-              <li><a href="#conservation">7. Durée de conservation</a></li>
-              <li><a href="#securite">8. Sécurité</a></li>
-              <li><a href="#droits">9. Vos droits</a></li>
-              <li><a href="#cookies">10. Cookies et outils d'analyse</a></li>
-              <li><a href="#tiers">11. Intégration d'offres tiers</a></li>
-            </ol>
+    <main id="main">
+      <section class="page-hero">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Fil d'Ariane">
+            <a href="index.html">Accueil</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            <span aria-current="page">Politique de confidentialité</span>
           </nav>
-        </aside>
+          <h1 class="page-title">Politique de confidentialité</h1>
+          <p class="page-meta">Version 1.0.0 &nbsp;·&nbsp; Dernière mise à jour : juin 2026</p>
+        </div>
+      </section>
 
-        <!-- CONTENU LÉGAL -->
-        <div class="legal-content">
+      <section class="legal-section">
+        <div class="wrap legal-wrap">
+          <aside>
+            <nav class="legal-toc" aria-label="Sommaire">
+              <p class="legal-toc-title">Sommaire</p>
+              <ol class="legal-toc-list">
+                <li><a href="#intro">1. Introduction</a></li>
+                <li><a href="#responsable">2. Responsable du traitement</a></li>
+                <li><a href="#donnees">3. Catégories de données</a></li>
+                <li><a href="#finalites">4. Finalités du traitement</a></li>
+                <li><a href="#bases">5. Base juridique</a></li>
+                <li><a href="#partage">6. Publication et transmission</a></li>
+                <li><a href="#conservation">7. Durée de conservation</a></li>
+                <li><a href="#securite">8. Sécurité</a></li>
+                <li><a href="#droits">9. Vos droits</a></li>
+                <li><a href="#cookies">10. Cookies</a></li>
+                <li><a href="#tiers">11. Offres tiers</a></li>
+              </ol>
+            </nav>
+          </aside>
 
-          <article id="intro" class="legal-article">
-            <h2>1. Introduction</h2>
-            <p>La présente politique de confidentialité explique comment <strong>Cordonnerie Multi-Services Sàrl</strong> (ci-après « nous » ou « notre entreprise ») collecte, utilise et protège vos données à caractère personnel, conformément à la Loi fédérale sur la protection des données (<abbr title="Nouvelle Loi sur la Protection des Données, en vigueur depuis le 1er septembre 2023">nLPD</abbr>) et, le cas échéant, au Règlement général sur la protection des données (<abbr title="Règlement Général sur la Protection des Données">RGPD</abbr>) de l'Union européenne.</p>
-            <p>Cette politique s'applique à toute utilisation de notre site web <strong>cordonnerie-sion.ch</strong> ainsi qu'à l'ensemble de nos relations commerciales avec notre établissement situé Place du Midi 52, 1950 Sion, Suisse.</p>
-            <p>En utilisant notre site ou en nous contactant, vous acceptez les pratiques décrites dans la présente politique. Nous vous encourageons à la lire attentivement.</p>
-          </article>
+          <div class="legal-content">
+            <article id="intro" class="legal-article">
+              <h2>1. Introduction</h2>
+              <p>La présente politique de confidentialité explique comment <strong>Cordonnerie Multi-Services Sàrl</strong> (ci-après « nous » ou « notre entreprise ») collecte, utilise et protège vos données à caractère personnel, conformément à la Loi fédérale sur la protection des données (<abbr title="Nouvelle Loi sur la Protection des Données, en vigueur depuis le 1er septembre 2023">nLPD</abbr>) et, le cas échéant, au Règlement général sur la protection des données (<abbr title="Règlement Général sur la Protection des Données">RGPD</abbr>) de l'Union européenne.</p>
+              <p>Cette politique s'applique à toute utilisation de notre site web <strong>cordonnerie-sion.ch</strong> ainsi qu'à l'ensemble de nos relations commerciales avec notre établissement situé Place du Midi 52, 1950 Sion, Suisse.</p>
+              <p>En utilisant notre site ou en nous contactant, vous acceptez les pratiques décrites dans la présente politique. Nous vous encourageons à la lire attentivement.</p>
+            </article>
 
-          <article id="responsable" class="legal-article">
-            <h2>2. Nom et adresse du responsable</h2>
-            <p>Le responsable du traitement des données au sens de la nLPD et du RGPD est :</p>
-            <address class="legal-address">
-              <strong>Cordonnerie Multi-Services Sàrl</strong><br>
-              Place du Midi 52<br>
-              1950 Sion<br>
-              Suisse<br><br>
-              Téléphone : <a href="tel:+41273220092">027 322 00 92</a><br>
-              E-mail : <a href="mailto:infocordonnerie@netplus.ch">infocordonnerie@netplus.ch</a>
-            </address>
-          </article>
+            <article id="responsable" class="legal-article">
+              <h2>2. Nom et adresse du responsable</h2>
+              <p>Le responsable du traitement des données au sens de la nLPD et du RGPD est :</p>
+              <address class="legal-address">
+                <strong>Cordonnerie Multi-Services Sàrl</strong><br />
+                Place du Midi 52<br />
+                1950 Sion<br />
+                Suisse<br /><br />
+                Téléphone : <a href="tel:+41273220092">027 322 00 92</a><br />
+                E-mail : <a href="mailto:infocordonnerie@netplus.ch">infocordonnerie@netplus.ch</a>
+              </address>
+            </article>
 
-          <article id="donnees" class="legal-article">
-            <h2>3. Catégories de données</h2>
-            <p>Dans le cadre de l'exploitation de notre site web et de notre activité commerciale, nous traitons les catégories de données personnelles suivantes :</p>
-            <ul>
-              <li><strong>Données de navigation :</strong> adresses IP, identifiants de cookies, pages et sections consultées, date et heure des visites, type de navigateur, système d'exploitation et appareil utilisé.</li>
-              <li><strong>Données de contact :</strong> nom, prénom, adresse postale, numéro de téléphone, adresse e-mail fournis volontairement via notre formulaire de contact ou par e-mail direct.</li>
-              <li><strong>Données de communication :</strong> contenu des messages envoyés via notre formulaire de contact ou par e-mail, ainsi que les échanges téléphoniques dans le cadre de nos prestations.</li>
-              <li><strong>Données commerciales :</strong> informations relatives aux réparations commandées, devis demandés, articles achetés et historique des transactions avec notre établissement.</li>
-              <li><strong>Données de participation :</strong> le cas échéant, données transmises dans le cadre de concours ou de programmes de fidélité.</li>
-            </ul>
-            <p>Nous ne collectons pas de données dites « sensibles » au sens de la nLPD (données relatives à la santé, convictions religieuses, données biométriques, etc.), sauf circonstance exceptionnelle avec votre consentement explicite.</p>
-          </article>
+            <article id="donnees" class="legal-article">
+              <h2>3. Catégories de données</h2>
+              <p>Dans le cadre de l'exploitation de notre site web et de notre activité commerciale, nous traitons les catégories de données personnelles suivantes :</p>
+              <ul>
+                <li><strong>Données de navigation :</strong> adresses IP, identifiants de cookies, pages et sections consultées, date et heure des visites, type de navigateur, système d'exploitation et appareil utilisé.</li>
+                <li><strong>Données de contact :</strong> nom, prénom, adresse postale, numéro de téléphone, adresse e-mail fournis volontairement via notre formulaire de contact ou par e-mail direct.</li>
+                <li><strong>Données de communication :</strong> contenu des messages envoyés via notre formulaire de contact ou par e-mail, ainsi que les échanges téléphoniques dans le cadre de nos prestations.</li>
+                <li><strong>Données commerciales :</strong> informations relatives aux réparations commandées, devis demandés, articles achetés et historique des transactions avec notre établissement.</li>
+                <li><strong>Données de participation :</strong> le cas échéant, données transmises dans le cadre de concours ou de programmes de fidélité.</li>
+              </ul>
+              <p>Nous ne collectons pas de données dites « sensibles » au sens de la nLPD (données relatives à la santé, convictions religieuses, données biométriques, etc.), sauf circonstance exceptionnelle avec votre consentement explicite.</p>
+            </article>
 
-          <article id="finalites" class="legal-article">
-            <h2>4. Finalités du traitement</h2>
-            <p>Nous traitons vos données personnelles aux fins suivantes :</p>
-            <ul>
-              <li><strong>Exécution des contrats :</strong> prise en charge, suivi et livraison de vos réparations, commandes et prestations artisanales.</li>
-              <li><strong>Relation client :</strong> traitement de vos demandes, devis, réclamations et questions via téléphone, e-mail ou formulaire de contact.</li>
-              <li><strong>Amélioration de nos services :</strong> analyse de l'utilisation du site pour identifier les axes d'amélioration et optimiser l'expérience utilisateur.</li>
-              <li><strong>Respect des obligations légales :</strong> tenue de la comptabilité, émission de factures, conservation des documents exigés par le droit suisse.</li>
-              <li><strong>Communication commerciale :</strong> envoi d'informations sur nos services, offres ou actualités (uniquement avec votre consentement préalable).</li>
-              <li><strong>Contrôle qualité :</strong> évaluation interne de la qualité de nos prestations artisanales et de notre service client.</li>
-              <li><strong>Sécurité informatique :</strong> protection de notre infrastructure contre les accès non autorisés, fraudes et cyberattaques.</li>
-            </ul>
-          </article>
+            <article id="finalites" class="legal-article">
+              <h2>4. Finalités du traitement</h2>
+              <p>Nous traitons vos données personnelles aux fins suivantes :</p>
+              <ul>
+                <li><strong>Exécution des contrats :</strong> prise en charge, suivi et livraison de vos réparations, commandes et prestations artisanales.</li>
+                <li><strong>Relation client :</strong> traitement de vos demandes, devis, réclamations et questions via téléphone, e-mail ou formulaire de contact.</li>
+                <li><strong>Amélioration de nos services :</strong> analyse de l'utilisation du site pour identifier les axes d'amélioration et optimiser l'expérience utilisateur.</li>
+                <li><strong>Respect des obligations légales :</strong> tenue de la comptabilité, émission de factures, conservation des documents exigés par le droit suisse.</li>
+                <li><strong>Communication commerciale :</strong> envoi d'informations sur nos services, offres ou actualités (uniquement avec votre consentement préalable).</li>
+                <li><strong>Contrôle qualité :</strong> évaluation interne de la qualité de nos prestations artisanales et de notre service client.</li>
+                <li><strong>Sécurité informatique :</strong> protection de notre infrastructure contre les accès non autorisés, fraudes et cyberattaques.</li>
+              </ul>
+            </article>
 
-          <article id="bases" class="legal-article">
-            <h2>5. Base juridique</h2>
-            <p>Le traitement de vos données repose sur les bases juridiques suivantes, conformément à l'art. 6 nLPD et à l'art. 6 RGPD :</p>
-            <ul>
-              <li><strong>Exécution d'un contrat :</strong> le traitement est nécessaire pour honorer nos engagements contractuels envers vous (réparations, commandes, prestations).</li>
-              <li><strong>Obligation légale :</strong> le traitement est requis pour satisfaire à nos obligations légales, notamment en matière de comptabilité (art. 958f CO), de facturation et d'archivage.</li>
-              <li><strong>Consentement :</strong> pour le dépôt de cookies non essentiels, les communications marketing et tout autre traitement soumis à votre accord préalable. Ce consentement peut être retiré à tout moment.</li>
-              <li><strong>Intérêt légitime :</strong> pour l'amélioration de nos services, la sécurité informatique, la prévention des fraudes et la gestion administrative courante, dans le respect de vos droits et libertés fondamentaux.</li>
-            </ul>
-          </article>
+            <article id="bases" class="legal-article">
+              <h2>5. Base juridique</h2>
+              <p>Le traitement de vos données repose sur les bases juridiques suivantes, conformément à l'art. 6 nLPD et à l'art. 6 RGPD :</p>
+              <ul>
+                <li><strong>Exécution d'un contrat :</strong> le traitement est nécessaire pour honorer nos engagements contractuels envers vous (réparations, commandes, prestations).</li>
+                <li><strong>Obligation légale :</strong> le traitement est requis pour satisfaire à nos obligations légales, notamment en matière de comptabilité (art. 958f CO), de facturation et d'archivage.</li>
+                <li><strong>Consentement :</strong> pour le dépôt de cookies non essentiels, les communications marketing et tout autre traitement soumis à votre accord préalable. Ce consentement peut être retiré à tout moment.</li>
+                <li><strong>Intérêt légitime :</strong> pour l'amélioration de nos services, la sécurité informatique, la prévention des fraudes et la gestion administrative courante, dans le respect de vos droits et libertés fondamentaux.</li>
+              </ul>
+            </article>
 
-          <article id="partage" class="legal-article">
-            <h2>6. Publication et transmission</h2>
-            <p>Nous ne vendons, ne louons ni ne cédons vos données personnelles à des tiers à des fins commerciales. Nous pouvons toutefois être amenés à les transmettre dans les cas suivants :</p>
+            <article id="partage" class="legal-article">
+              <h2>6. Publication et transmission</h2>
+              <p>Nous ne vendons, ne louons ni ne cédons vos données personnelles à des tiers à des fins commerciales. Nous pouvons toutefois être amenés à les transmettre dans les cas suivants :</p>
+              <h3>Sous-traitants des données</h3>
+              <p>Nous faisons appel à des prestataires de services tiers (hébergeur web, solution de messagerie électronique, plateforme de formulaires de contact) pour lesquels des données peuvent transiter. Ces sous-traitants sont situés en <strong>Suisse, en Allemagne et aux États-Unis</strong>. Ils sont liés par des engagements contractuels de confidentialité et ne traitent vos données qu'aux fins strictement définies par nos soins. Pour les transferts hors de Suisse et de l'Espace économique européen, nous veillons à ce que des garanties appropriées soient en place (clauses contractuelles types, Privacy Data Framework, etc.).</p>
+              <h3>Partenaires contractuels</h3>
+              <p>Dans le cadre de l'exécution de certaines prestations artisanales spécialisées (sous-traitance d'une réparation, fournisseurs de pièces), nous pouvons partager les informations minimales nécessaires à la bonne réalisation du service. Ces partenaires sont tenus au respect de la confidentialité.</p>
+              <h3>Transmission aux autorités</h3>
+              <p>Nous pouvons être contraints de transmettre des données personnelles à des autorités administratives ou judiciaires suisses ou étrangères lorsque la loi applicable nous y oblige, ou dans le cadre d'une procédure légale. Nous vous en informerons dans la mesure du possible, sauf interdiction légale.</p>
+            </article>
 
-            <h3>Sous-traitants des données</h3>
-            <p>Nous faisons appel à des prestataires de services tiers (hébergeur web, solution de messagerie électronique, plateforme de formulaires de contact) pour lesquels des données peuvent transiter. Ces sous-traitants sont situés en <strong>Suisse, en Allemagne, en Israël et aux États-Unis</strong>. Ils sont liés par des engagements contractuels de confidentialité et ne traitent vos données qu'aux fins strictement définies par nos soins. Pour les transferts hors de Suisse et de l'Espace économique européen, nous veillons à ce que des garanties appropriées soient en place (clauses contractuelles types, Privacy Data Framework, etc.).</p>
+            <article id="conservation" class="legal-article">
+              <h2>7. Durée de conservation</h2>
+              <p>Vos données sont conservées pour la durée strictement nécessaire aux finalités pour lesquelles elles ont été collectées, puis supprimées ou anonymisées :</p>
+              <ul>
+                <li><strong>Données commerciales et comptables :</strong> jusqu'à <strong>10 ans</strong> conformément à l'art. 958f du Code des obligations suisse (obligation de conservation des pièces comptables).</li>
+                <li><strong>Correspondance et demandes de contact :</strong> <strong>3 à 5 ans</strong> selon la nature de l'échange et l'éventualité d'une réclamation ultérieure.</li>
+                <li><strong>Cookies de session :</strong> supprimés à la fermeture du navigateur.</li>
+                <li><strong>Cookies persistants :</strong> entre <strong>1 et 24 mois</strong> selon leur type et finalité.</li>
+                <li><strong>Données d'analyse :</strong> selon les paramètres de l'outil d'analyse utilisé (en général 13 à 26 mois).</li>
+              </ul>
+              <p>Au-delà de ces délais, les données sont définitivement supprimées de nos systèmes ou rendues irréversiblement anonymes.</p>
+            </article>
 
-            <h3>Partenaires contractuels</h3>
-            <p>Dans le cadre de l'exécution de certaines prestations artisanales spécialisées (sous-traitance d'une réparation, fournisseurs de pièces), nous pouvons partager les informations minimales nécessaires à la bonne réalisation du service. Ces partenaires sont tenus au respect de la confidentialité.</p>
+            <article id="securite" class="legal-article">
+              <h2>8. Sécurité</h2>
+              <p>Nous mettons en œuvre des mesures techniques et organisationnelles adaptées pour protéger vos données personnelles contre tout accès non autorisé, perte accidentelle, altération, divulgation ou destruction. Parmi ces mesures :</p>
+              <ul>
+                <li>Transmission chiffrée via le protocole <strong>HTTPS/TLS</strong> sur l'ensemble du site.</li>
+                <li>Accès aux données restreint aux seules personnes ayant besoin d'en connaître.</li>
+                <li>Mise à jour régulière de nos systèmes et logiciels contre les vulnérabilités connues.</li>
+                <li>Engagements contractuels de sécurité imposés à nos sous-traitants.</li>
+              </ul>
+              <p>Toutefois, aucun système de transmission sur Internet ne peut garantir une sécurité absolue. En cas d'incident de sécurité (violation de données) affectant vos droits et libertés, nous nous engageons à vous en informer et à notifier l'autorité compétente dans les délais prévus par la loi (72 heures selon le RGPD).</p>
+            </article>
 
-            <h3>Transmission aux autorités</h3>
-            <p>Nous pouvons être contraints de transmettre des données personnelles à des autorités administratives ou judiciaires suisses ou étrangères lorsque la loi applicable nous y oblige, ou dans le cadre d'une procédure légale. Nous vous en informerons dans la mesure du possible, sauf interdiction légale.</p>
-          </article>
+            <article id="droits" class="legal-article">
+              <h2>9. Vos droits</h2>
+              <p>Conformément à la nLPD et, le cas échéant, au RGPD, vous disposez des droits suivants concernant vos données personnelles :</p>
+              <ul>
+                <li><strong>Droit d'accès :</strong> obtenir confirmation que nous traitons vos données et en recevoir une copie.</li>
+                <li><strong>Droit de rectification :</strong> faire corriger des données inexactes ou compléter des données incomplètes.</li>
+                <li><strong>Droit à l'effacement :</strong> demander la suppression de vos données lorsque les conditions légales sont réunies.</li>
+                <li><strong>Droit à la limitation du traitement :</strong> demander la restriction temporaire du traitement dans les cas prévus par la loi.</li>
+                <li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré, couramment utilisé et lisible par machine.</li>
+                <li><strong>Droit d'opposition :</strong> vous opposer à un traitement fondé sur l'intérêt légitime ou à des fins de prospection commerciale.</li>
+                <li><strong>Droit de retirer votre consentement :</strong> à tout moment et sans frais, sans que cela n'affecte la licéité du traitement effectué avant ce retrait.</li>
+              </ul>
+              <p>Pour exercer l'un de ces droits, adressez votre demande à :</p>
+              <address class="legal-address">
+                Cordonnerie Multi-Services Sàrl<br />
+                Place du Midi 52 · 1950 Sion<br />
+                <a href="mailto:infocordonnerie@netplus.ch">infocordonnerie@netplus.ch</a>
+              </address>
+              <p style="margin-top:1rem">Nous répondrons à votre demande dans un délai de <strong>30 jours</strong>. Si vous estimez que le traitement de vos données ne respecte pas la législation applicable, vous pouvez déposer une réclamation auprès du :</p>
+              <address class="legal-address">
+                <strong>Préposé fédéral à la protection des données et à la transparence (PFPDT)</strong><br />
+                Feldeggweg 1 · 3003 Berne · Suisse<br />
+                <a href="https://www.edoeb.admin.ch" rel="noopener noreferrer" target="_blank">www.edoeb.admin.ch</a>
+              </address>
+            </article>
 
-          <article id="conservation" class="legal-article">
-            <h2>7. Durée de conservation</h2>
-            <p>Vos données sont conservées pour la durée strictement nécessaire aux finalités pour lesquelles elles ont été collectées, puis supprimées ou anonymisées :</p>
-            <ul>
-              <li><strong>Données commerciales et comptables :</strong> jusqu'à <strong>10 ans</strong> conformément à l'art. 958f du Code des obligations suisse (obligation de conservation des pièces comptables).</li>
-              <li><strong>Correspondance et demandes de contact :</strong> <strong>3 à 5 ans</strong> selon la nature de l'échange et l'éventualité d'une réclamation ultérieure.</li>
-              <li><strong>Cookies de session :</strong> supprimés à la fermeture du navigateur.</li>
-              <li><strong>Cookies persistants :</strong> entre <strong>1 et 24 mois</strong> selon leur type et finalité (voir la déclaration des cookies ci-dessous).</li>
-              <li><strong>Données d'analyse :</strong> selon les paramètres de l'outil d'analyse utilisé (en général 13 à 26 mois).</li>
-            </ul>
-            <p>Au-delà de ces délais, les données sont définitivement supprimées de nos systèmes ou rendues irréversiblement anonymes.</p>
-          </article>
+            <article id="cookies" class="legal-article">
+              <h2>10. Cookies</h2>
+              <p>Notre site web utilise des cookies, de petits fichiers textes déposés sur votre appareil lors de la visite. Ils permettent d'assurer le bon fonctionnement du site, d'analyser son utilisation et de mémoriser certaines de vos préférences.</p>
+              <h3>Types de cookies utilisés</h3>
+              <ul>
+                <li><strong>Cookies nécessaires :</strong> indispensables au fonctionnement technique du site (session, préférences de consentement). Ils ne peuvent pas être désactivés sans affecter le site.</li>
+                <li><strong>Cookies de préférences :</strong> mémorisent vos choix (langue, consentement) pour améliorer votre expérience lors de visites ultérieures.</li>
+                <li><strong>Cookies statistiques :</strong> collectent des données anonymisées sur votre navigation pour nous aider à améliorer notre site. Ils ne sont déposés qu'avec votre consentement.</li>
+                <li><strong>Cookies marketing :</strong> utilisés pour vous proposer des contenus adaptés à vos centres d'intérêt. Ils ne sont déposés qu'avec votre consentement.</li>
+              </ul>
+              <p>Vous pouvez gérer et retirer votre consentement aux cookies à tout moment. Vous pouvez également configurer votre navigateur pour bloquer ou supprimer les cookies, ce qui peut affecter certaines fonctionnalités du site.</p>
+            </article>
 
-          <article id="securite" class="legal-article">
-            <h2>8. Sécurité</h2>
-            <p>Nous mettons en œuvre des mesures techniques et organisationnelles adaptées pour protéger vos données personnelles contre tout accès non autorisé, perte accidentelle, altération, divulgation ou destruction. Parmi ces mesures :</p>
-            <ul>
-              <li>Transmission chiffrée via le protocole <strong>HTTPS/TLS</strong> sur l'ensemble du site.</li>
-              <li>Accès aux données restreint aux seules personnes ayant besoin d'en connaître.</li>
-              <li>Mise à jour régulière de nos systèmes et logiciels contre les vulnérabilités connues.</li>
-              <li>Engagements contractuels de sécurité imposés à nos sous-traitants.</li>
-            </ul>
-            <p>Toutefois, aucun système de transmission sur Internet ne peut garantir une sécurité absolue. En cas d'incident de sécurité (violation de données) affectant vos droits et libertés, nous nous engageons à vous en informer et à notifier l'autorité compétente dans les délais prévus par la loi (72 heures selon le RGPD).</p>
-          </article>
+            <article id="tiers" class="legal-article">
+              <h2>11. Intégration d'offres tiers</h2>
+              <p>Notre site intègre des services fournis par des tiers, susceptibles de traiter certaines de vos données selon leurs propres politiques de confidentialité :</p>
+              <ul>
+                <li><strong>Google Maps (carte interactive) :</strong> lors du chargement de notre carte, une connexion est établie avec les serveurs de Google LLC (États-Unis), susceptible d'entraîner la transmission de votre adresse IP. <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Politique de confidentialité Google</a>.</li>
+                <li><strong>jsDelivr (polices de caractères) :</strong> les typographies de ce site sont chargées depuis le réseau de diffusion jsDelivr. Votre adresse IP peut être transmise lors de ce chargement. <a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net" rel="noopener noreferrer" target="_blank">Politique de confidentialité jsDelivr</a>.</li>
+                <li><strong>Messagerie e-mail :</strong> le formulaire de contact ouvre votre logiciel de messagerie pour envoyer un e-mail à <a href="mailto:infocordonnerie@netplus.ch">infocordonnerie@netplus.ch</a>. Aucune donnée n'est transmise à un service tiers à cette étape.</li>
+              </ul>
+              <p>Nous vous invitons à consulter les politiques de confidentialité de ces prestataires pour comprendre comment ils traitent vos données.</p>
+            </article>
 
-          <article id="droits" class="legal-article">
-            <h2>9. Vos droits</h2>
-            <p>Conformément à la nLPD et, le cas échéant, au RGPD, vous disposez des droits suivants concernant vos données personnelles :</p>
-            <ul>
-              <li><strong>Droit d'accès :</strong> obtenir confirmation que nous traitons vos données et en recevoir une copie.</li>
-              <li><strong>Droit de rectification :</strong> faire corriger des données inexactes ou compléter des données incomplètes.</li>
-              <li><strong>Droit à l'effacement :</strong> demander la suppression de vos données lorsque les conditions légales sont réunies (données non plus nécessaires, retrait du consentement, traitement illicite).</li>
-              <li><strong>Droit à la limitation du traitement :</strong> demander la restriction temporaire du traitement dans les cas prévus par la loi.</li>
-              <li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré, couramment utilisé et lisible par machine, et les transmettre à un autre responsable.</li>
-              <li><strong>Droit d'opposition :</strong> vous opposer à un traitement fondé sur l'intérêt légitime ou à des fins de prospection commerciale.</li>
-              <li><strong>Droit de retirer votre consentement :</strong> à tout moment et sans frais, sans que cela n'affecte la licéité du traitement effectué avant ce retrait.</li>
-            </ul>
-            <p>Pour exercer l'un de ces droits, adressez votre demande à :</p>
-            <address class="legal-address">
-              Cordonnerie Multi-Services Sàrl<br>
-              Place du Midi 52 · 1950 Sion<br>
-              <a href="mailto:infocordonnerie@netplus.ch">infocordonnerie@netplus.ch</a>
-            </address>
-            <p style="margin-top:1rem">Nous répondrons à votre demande dans un délai de <strong>30 jours</strong>. Si vous estimez que le traitement de vos données ne respecte pas la législation applicable, vous pouvez déposer une réclamation auprès du :</p>
-            <address class="legal-address">
-              <strong>Préposé fédéral à la protection des données et à la transparence (PFPDT)</strong><br>
-              Feldeggweg 1 · 3003 Berne · Suisse<br>
-              <a href="https://www.edoeb.admin.ch" rel="noopener noreferrer" target="_blank">www.edoeb.admin.ch</a>
-            </address>
-          </article>
-
-          <article id="cookies" class="legal-article">
-            <h2>10. Cookies et outils d'analyse</h2>
-            <p>Notre site web utilise des cookies — de petits fichiers textes déposés sur votre appareil lors de la visite. Ils permettent d'assurer le bon fonctionnement du site, d'analyser son utilisation et de mémoriser certaines de vos préférences.</p>
-
-            <h3>Types de cookies utilisés</h3>
-            <ul>
-              <li><strong>Cookies nécessaires :</strong> indispensables au fonctionnement technique du site (session, préférences de consentement). Ils ne peuvent pas être désactivés sans affecter le site.</li>
-              <li><strong>Cookies de préférences :</strong> mémorisent vos choix (langue, consentement) pour améliorer votre expérience lors de visites ultérieures.</li>
-              <li><strong>Cookies statistiques :</strong> collectent des données anonymisées sur votre navigation (pages visitées, durée, provenance) pour nous aider à améliorer notre site. Ces cookies ne sont déposés qu'avec votre consentement.</li>
-              <li><strong>Cookies marketing :</strong> utilisés pour vous proposer des publicités et contenus adaptés à vos centres d'intérêt sur d'autres sites. Ces cookies ne sont déposés qu'avec votre consentement.</li>
-            </ul>
-
-            <p>Vous pouvez gérer et retirer votre consentement aux cookies à tout moment via le panneau de gestion accessible en bas de page. Vous pouvez également configurer votre navigateur pour bloquer ou supprimer les cookies — notez que cela peut affecter certaines fonctionnalités du site.</p>
-
-            <h3>Déclaration des cookies</h3>
-            <p>La liste complète des cookies utilisés sur ce site, leur finalité et leur durée de conservation est présentée ci-dessous et mise à jour automatiquement par Cookiebot&nbsp;:</p>
-
-            <div class="cookie-decl-wrap">
-              <!-- Cookiebot Cookie Declaration — affiche automatiquement le tableau des cookies -->
-              <script id="CookieDeclaration"
-                      src="https://consent.cookiebot.com/YOUR-CBID-HERE/cd.js"
-                      type="text/javascript"
-                      async></script>
-              <noscript>
-                <p class="cookie-noscript">La déclaration des cookies nécessite JavaScript. Veuillez activer JavaScript dans votre navigateur pour afficher le détail des cookies utilisés sur ce site.</p>
-              </noscript>
+            <div class="legal-version">
+              <p><strong>Version 1.0.0, Juin 2026</strong></p>
+              <p>Nous nous réservons le droit de modifier cette politique à tout moment. La version en vigueur est celle publiée sur cette page. Pour toute question, contactez-nous à <a href="mailto:infocordonnerie@netplus.ch">infocordonnerie@netplus.ch</a>.</p>
             </div>
-          </article>
-
-          <article id="tiers" class="legal-article">
-            <h2>11. Intégration d'offres tiers</h2>
-            <p>Notre site intègre des services fournis par des tiers, susceptibles de traiter certaines de vos données selon leurs propres politiques de confidentialité :</p>
-            <ul>
-              <li>
-                <strong>Formspree (formulaire de contact) :</strong> les données soumises via notre formulaire de contact sont transmises et traitées par Formspree Inc. (États-Unis). Formspree est soumis à des garanties de transfert adéquates.
-                <a href="https://formspree.io/legal/privacy-policy" rel="noopener noreferrer" target="_blank">Politique de confidentialité Formspree</a>.
-              </li>
-              <li>
-                <strong>OpenStreetMap (carte interactive) :</strong> lors du chargement de notre carte, une connexion est établie avec les serveurs d'OpenStreetMap Foundation (Royaume-Uni), susceptible d'entraîner la transmission de votre adresse IP.
-                <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" rel="noopener noreferrer" target="_blank">Politique de confidentialité OpenStreetMap</a>.
-              </li>
-              <li>
-                <strong>Google Fonts (typographies) :</strong> les polices de caractères utilisées sur ce site sont chargées depuis les serveurs Google LLC (États-Unis). Votre adresse IP peut être transmise lors de ce chargement.
-                <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Politique de confidentialité Google</a>.
-              </li>
-              <li>
-                <strong>Cookiebot (gestion du consentement) :</strong> nous utilisons Cookiebot, un service de Cybot A/S (Danemark), pour gérer votre consentement aux cookies conformément au RGPD et à la nLPD. Les choix de consentement sont transmis aux serveurs Cookiebot.
-                <a href="https://www.cookiebot.com/en/privacy-policy/" rel="noopener noreferrer" target="_blank">Politique de confidentialité Cookiebot</a>.
-              </li>
-            </ul>
-            <p>Nous vous invitons à consulter les politiques de confidentialité de ces prestataires pour comprendre comment ils traitent vos données.</p>
-          </article>
-
-          <div class="legal-version">
-            <p><strong>Version 1.0.0 — Juin 2026</strong></p>
-            <p>Nous nous réservons le droit de modifier cette politique à tout moment. La version en vigueur est celle publiée sur cette page. Pour toute question, contactez-nous à <a href="mailto:infocordonnerie@netplus.ch">infocordonnerie@netplus.ch</a>.</p>
-          </div>
-
-        </div><!-- /.legal-content -->
-      </div><!-- /.legal-wrap -->
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer-flag" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-logo">
-            <img src="https://le-de.cdn-website.com/c7655ccd21fa48e39d5a322607a67e62/dms3rep/multi/opt/Cordonnerie-Multi-Services-Sarl-Logo-1920w.jpg"
-                 alt="Cordonnerie Multi-Services Sàrl" width="180" height="48" loading="lazy">
-          </div>
-          <p class="footer-tag">Artisan-cordonnier à Sion depuis 2004. Neuf métiers artisanaux, une seule adresse.</p>
-          <address class="footer-addr">
-            Place du Midi 52 · 1950 Sion<br>
-            <a href="tel:+41273220092">027 322 00 92</a><br>
-            <a href="mailto:infocordonnerie@netplus.ch">infocordonnerie@netplus.ch</a>
-          </address>
-          <div class="footer-soc">
-            <a href="https://www.facebook.com/cakolli7118/" class="footer-si" rel="noopener noreferrer" target="_blank" aria-label="Facebook Cordonnerie Multi-Services">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-            </a>
           </div>
         </div>
-        <div>
-          <p class="footer-col-title">Horaires</p>
-          <dl>
-            <div class="footer-hr"><dt>Lundi</dt>    <dd>8h30 – 12h00</dd></div>
-            <div class="footer-hr"><dt>Ma – Ve</dt>   <dd>8h30–12h / 13h30–18h30</dd></div>
-            <div class="footer-hr"><dt>Samedi</dt>   <dd>8h30–12h / 13h30–17h00</dd></div>
-            <div class="footer-hr"><dt>Dimanche</dt> <dd style="color:#CE2B37">Fermé</dd></div>
-          </dl>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="foot-grid">
+          <div class="foot-brand">
+            <img src="images/logo.jpg" alt="Cordonnerie Multi-Services Sàrl" width="135" height="46" />
+            <p>Artisan-cordonnier à Sion depuis 2004. Neuf métiers artisanaux, une seule adresse, Place du Midi.</p>
+            <p style="font-size:0.9rem">Place du Midi 52, 1950 Sion<br /><a href="tel:+41273220092">027 322 00 92</a></p>
+          </div>
+          <div class="foot-col">
+            <h4>Navigation</h4>
+            <a href="index.html">Accueil</a>
+            <a href="index.html#services">Nos services</a>
+            <a href="index.html#boutique">Boutique</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+          <div class="foot-col">
+            <h4>Légal</h4>
+            <a href="privacy.html" aria-current="page">Politique de confidentialité</a>
+            <a href="mentions-legales.html">Mentions légales</a>
+          </div>
         </div>
-        <div>
-          <p class="footer-col-title">Nos services</p>
-          <a href="index.html#services" class="footer-lnk">Cordonnerie</a>
-          <a href="index.html#services" class="footer-lnk">Duplication de clés</a>
-          <a href="index.html#services" class="footer-lnk">Gravures</a>
-          <a href="index.html#services" class="footer-lnk">Maroquinerie italienne</a>
-          <a href="index.html#services" class="footer-lnk">Coutellerie &amp; Victorinox</a>
-          <a href="index.html#services" class="footer-lnk">Aiguisage &amp; Entretien</a>
+        <div class="foot-bottom">
+          <span>© 2004-2026 Cordonnerie Multi-Services Sàrl. Tous droits réservés.</span>
+          <span>Place du Midi 52, 1950 Sion · 027 322 00 92</span>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span class="footer-copy">© 2026 Cordonnerie Multi-Services Sàrl — Sion</span>
-        <nav class="footer-legal" aria-label="Liens légaux">
-          <a href="privacy.html" aria-current="page">Politique de confidentialité</a>
-          <a href="mentions-legales.html">Mentions légales</a>
-          <span style="color:rgba(255,255,255,.1)">Site démo</span>
-        </nav>
-      </div>
-    </div>
-  </footer>
-
-  <script src="scripts.js" defer></script>
-</body>
+    </footer>
+  </body>
 </html>

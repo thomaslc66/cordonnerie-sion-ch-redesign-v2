@@ -1,0 +1,5 @@
+# Fichiers internes du pipeline (non destinés au site public)
+brief.md
+site_data.json
+crawl_pages.json
+design_tokens.json
